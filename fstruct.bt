@@ -1,0 +1,6 @@
+#!/usr/bin/bpftrace
+
+uprobe:/home/haibzhou/gopath/bin/go-uprobe-demo:main.fstruct {
+    $addr = sarg0;
+    printf("fstruct %d", $addr);
+}

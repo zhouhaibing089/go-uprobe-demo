@@ -1,0 +1,5 @@
+#!/usr/bin/bpftrace
+
+uprobe:/home/haibzhou/gopath/bin/go-uprobe-demo:main.fint {
+    printf("fint %d\n", sarg0);
+}

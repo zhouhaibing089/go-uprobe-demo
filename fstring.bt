@@ -1,0 +1,7 @@
+#!/usr/bin/bpftrace
+
+uprobe:/home/haibzhou/gopath/bin/go-uprobe-demo:main.fstring {
+    $addr = sarg0;
+    $len = sarg1;
+    printf("fstring %s\n", str($addr, $len));
+}
